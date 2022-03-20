@@ -11,11 +11,11 @@ library(xgboost)
 library(plyr)
 
 ###training data from supplementary material, YBX1 as example
-Pdata <- readRNAStringSet("/data/kunqidir/m5cRpred/FA/full_transcript_positive_trainYBX1_35")
-Ndata <- readRNAStringSet("/data/kunqidir/m5cRpred/FA/full_transcript_negative_trainYBX1_35")
+Pdata <- readRNAStringSet("/FA/full_transcript_positive_trainYBX1_35")
+Ndata <- readRNAStringSet("/FA/full_transcript_negative_trainYBX1_35")
 
-Pdata_test <- readRNAStringSet("/data/kunqidir/m5cRpred/FA/full_transcript_positive_testYBX1_35")
-Ndata_test <- readRNAStringSet("/data/kunqidir/m5cRpred/FA/full_transcript_negative_testYBX1_35")
+Pdata_test <- readRNAStringSet("/FA/full_transcript_positive_testYBX1_35")
+Ndata_test <- readRNAStringSet("/FA/full_transcript_negative_testYBX1_35")
 
 
 
