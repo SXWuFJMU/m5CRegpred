@@ -4,6 +4,7 @@ m5CRegpred: epitranscriptome target prediction of 5-methylcytosine (m5C) regulat
 5-methylcytosine (m5C) is a common post-transcriptional modification observed in a variety of RNAs. m5C has been demonstrated to be important in a variety of biological processes, including RNA structural stability and metabolism. Driven by the importance of m5C modification, many projects focused on the m5C sites prediction were reported before. To better understand the upstream and downstream regulation of m5C, we present a bioinformatics framework, m5CRegpred, to predict the substrate of m5C writer NSUN2 and m5C readers YBX1 and ALYREF for the first time. After, features comparison, window lengths selection and algorism comparison, on the mature mRNA model, our model achieved AUROC scores 0.869, 0.724 and 0.889 for NSUN2, YBX1 and ALYREF in an independent test, respectively. Our work suggests the substrate of m5C regulators can be distinguished and may help the research of m5C regulators in a special condition, such as substrates prediction of hyper- or hypo-expressed m5C regulators in human disease.
 
 ##encoding methods
+
 source("PSNP.R")
 
 library(BSgenome)
@@ -47,9 +48,11 @@ testppred <- prediction(motif,testlabel)
 testpppred_auc <- performance(testppred,"auc")
 
 #####performance
+
 attr(testpppred_auc,"y.values")[[1]]
 
 ##########used input FA
+
 user_test <- readRNAStringSet("XXXXXXXXXXXXXXXXX.fa")
 FTT <- PSNP(as.data.frame(user_test)$x,as.data.frame(Ndata)$x,NI=2)
 user_test_F <- FTT[1:length(user_test),]
