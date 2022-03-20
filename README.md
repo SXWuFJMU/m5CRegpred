@@ -22,8 +22,6 @@ Ndata <- readRNAStringSet("/data/kunqidir/m5cRpred/FA/full_transcript_negative_t
 Pdata_test <- readRNAStringSet("/data/kunqidir/m5cRpred/FA/full_transcript_positive_testYBX1_35")
 Ndata_test <- readRNAStringSet("/data/kunqidir/m5cRpred/FA/full_transcript_negative_testYBX1_35")
 
-
-
 FTT <- PSNP(as.data.frame(Pdata)$x,as.data.frame(Ndata)$x,NI=2)
 Pdata_F <- FTT[1:length(Pdata),]
 Ndata_F <- FTT[-c(1:length(Pdata)),]
@@ -52,8 +50,8 @@ testpppred_auc <- performance(testppred,"auc")
 attr(testpppred_auc,"y.values")[[1]]
 
 ##########used input FA
-# user_test <- readRNAStringSet("XXXXXXXXXXXXXXXXX.fa")
-# FTT <- PSNP(as.data.frame(user_test)$x,as.data.frame(Ndata)$x,NI=2)
-# user_test_F <- FTT[1:length(user_test),]
-# user_test_pred <- predict(BIOmotifvsnon_SVM,user_test_F, probability = TRUE)
-# user_test_result <- attr(user_test_pred, 'probabilities')[,1]
+user_test <- readRNAStringSet("XXXXXXXXXXXXXXXXX.fa")
+FTT <- PSNP(as.data.frame(user_test)$x,as.data.frame(Ndata)$x,NI=2)
+user_test_F <- FTT[1:length(user_test),]
+user_test_pred <- predict(BIOmotifvsnon_SVM,user_test_F, probability = TRUE)
+user_test_result <- attr(user_test_pred, 'probabilities')[,1]
